@@ -1,0 +1,63 @@
+/* Style for the list container */
+ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* Style for each list item */
+  li {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style for the card title */
+  .card-title {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  /* Style for the card text */
+  .card-text {
+    margin-bottom: 5px;
+  }
+  
+  /* Style for specific elements */
+  .card-text.issue-type {
+    color:#007bff; /* Blue color for issue type */
+  }
+  
+  .card-text.status {
+    color:white; /* Green color for status */
+  }
+  
+  .card-text.severity {
+    color: #dc3545; /* Red color for severity */
+  }
+  
+  .card-text.priority {
+    font-weight: bold;
+  }
+  .incident-item {
+    list-style-type: none;
+    padding: 10px;
+    border: 1px solid #ddd; /* Add border for better separation */
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
+  
+  .highlight {
+    font-weight: bold;
+    color: purple; /* Blue color for highlighting, adjust as needed */
+  }
+  
+  .incident-value {
+    font-weight: normal;
+    color: #555; /* Dark gray color for values, adjust as needed */
+  }
+  
+  /* Add more styles as needed */
+  
+  

@@ -1,0 +1,68 @@
+ /* Apply general styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4ebfe; /* Light subtle background color for the entire page */
+  margin: 0; /* Remove default body margin */
+}
+
+/* Style the container */
+.container {
+  background-color: #c7e3ff; /* Container background color, adjust as needed */
+  padding: 20px; /* Add padding for spacing */
+  border-radius: 8px; /* Optional: Add rounded corners to the container */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle box shadow */
+}
+
+/* Style headings */
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #333; /* Dark gray color for labels */
+}
+
+/* Style input and select elements */
+input,
+select,
+textarea {
+  width: 50%; /* Adjust the width as needed */
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  color: #333; /* Dark gray color for text */
+}
+
+/* Style the button */
+button {
+  padding: 10px 20px; /* Adjust padding as needed */
+  background-color: #4caf50; /* Green background color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px; /* Adjust font size as needed */
+  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Add a subtle shadow on hover for a raised effect */
+button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Add some margin to the buttons for spacing */
+button:not(:last-child) {
+  margin-right: 10px;
+}
+
+/* Additional styling for a primary button */
+.primary-button {
+  background-color: #3498db; /* Blue background color */
+}
+
+.primary-button:hover {
+  background-color: #2980b9;
+}

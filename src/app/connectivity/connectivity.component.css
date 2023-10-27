@@ -1,0 +1,23 @@
+  /* Add this CSS in your style file or in a <style> tag in your HTML file */
+
+/* Gradient color for buttons */
+button {
+  background: linear-gradient(to right,rgba(0, 23, 128, 0.945),rgb(0, 30, 128)); /* Adjust the color codes as needed */
+  color: #fff; /* Text color */
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+ 
+ul.showHighPriorityList li {
+  border: 1px solid #ff4d4d; /* Red border */
+  background-color: #ffe6e6; /* Light red background */
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Highlighted button */
+button.highlighted {
+  background: linear-gradient(to right, #ff6347, #ff4500); /* Gradient with red tones */
+}

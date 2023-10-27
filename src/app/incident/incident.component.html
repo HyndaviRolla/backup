@@ -1,0 +1,56 @@
+<div>
+  <div>
+    <label style="color: blue;" for="search">Search Network Elements:</label>
+    <input type="text" id="search" [(ngModel)]="search" />
+    <button (click)="searchNetworkElements()">Search</button>
+  </div>
+
+  <div *ngIf="networkElements">
+    <label style="color: green;" for="networkElement">Select Network Element:</label>
+    <select id="networkElement" [(ngModel)]="selectedNetworkElement" (change)="onNetworkElementSelected()">
+      <option *ngFor="let element of networkElements" [ngValue]="element">{{ element.name }}</option>
+    </select>
+  </div>
+
+  <div *ngIf="components">
+    <label style="color: red;" for="component">Select Component:</label>
+    <select id="component" [(ngModel)]="selectedComponent">
+      <option *ngFor="let component of components" [ngValue]="component">{{ component.componentName }}</option>
+    </select>
+  </div>
+
+  <div>
+    <label style="color: orange;" for="description">Description:</label>
+    <textarea id="description" [(ngModel)]="description"></textarea>
+  </div>
+
+  <div>
+    <label style="color: purple;" for="issueType">Issue Type:</label>
+    <select id="issueType" [(ngModel)]="selectedIssueType">
+      <option value="hardware">Hardware Issues</option>
+      <option value="software">Software/Configuration Issues</option>
+      <option value="Connectivity Support">Connectivity Issues</option>
+      <option value ="Security Issues">Security Operations Center</option>
+    </select>
+  </div>
+
+  <div>
+    <label style="color: brown;" for="severity">Severity:</label>
+    <select [(ngModel)]="selectedSeverity" name="severity">
+      <option value="Low">Low</option>
+      <option value="Medium">Medium</option>
+      <option value="High">High</option>
+    </select>
+  </div>
+
+  <div>
+    <label style="color: teal;" for="priority">Priority:</label>
+    <select [(ngModel)]="selectedPriority" name="priority">
+      <option value="Low">Low</option>
+      <option value="Medium">Medium</option>
+      <option value="High">High</option>
+    </select>
+  </div>
+
+  <button (click)="submitIncident()">Submit</button>
+</div>

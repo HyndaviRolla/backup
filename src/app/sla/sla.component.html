@@ -1,0 +1,127 @@
+<style>
+  .incident-value {
+    color: brown; /* Change this to the desired color for incident values */
+  }
+
+  .basic-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .status-box {
+    display: inline-block;
+    padding: 5px;
+    border-radius: 5px;
+    color:white;
+  }
+
+  .status-new {
+    background-color: red;
+    color: white;
+  }
+
+  .status-closed {
+    background-color: green;
+    color: white;
+  }
+
+  .status-resolved {
+    background-color: blue;
+    color: white;
+  } 
+  .resolution-heading {
+    color: red; /* Change this to the desired color for the "Resolution" heading */
+  }
+
+  .side-tab {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Initially hidden off-screen */
+    width: 400px;
+    height: 100%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease-in-out;
+  }
+
+  .button-container {
+    flex-shrink: 0;
+    margin-right: 10px; /* Adjust margin as needed */
+  }
+  .show-details-btn {
+    margin-top: 10px;
+    cursor: pointer;
+    color: #007bff;
+    text-decoration: underline;
+  }
+</style>
+   <ul>
+    <li *ngFor="let incident of incidents">  
+
+      <div class="basic-info">
+        <p class="highlight">Ticket Id: <span class="incident-value">{{ incident.id }}</span></p>
+        <p class="highlight">Description: <span class="incident-value">{{ incident.description }}</span></p>
+        <p class="highlight">created At: <span class="incident-value">{{ incident.createdTime }}</span></p> 
+   
+        <p class="highlight" [ngClass]="{'status-new': incident.status === 'New', 'status-closed': incident.status === 'Closed', 'status-resolved': incident.status === 'Resolved'}"style="color: white">Status: {{ incident.status }}</p>
+      </div>
+        <div class="button-container">
+          <button class="show-details-btn" (click)="showDetails(incident.id ? incident.id : 0)">Show Details</button>
+        </div>
+        <div class="side-tab" id="sideTab{{ incident.id }}">
+          <p class="highlight">Issue Type: <span class="incident-value">{{ incident.issueType }}</span></p>
+          <p class="highlight">NetworkElement: <span class="incident-value">{{ incident.networkElement.name }}</span></p>
+          <p class="highlight">NetworkElement Type: <span class="incident-value">{{ incident.networkElement.type }}</span></p>
+          <p class="highlight">NetworkElement Model: <span class="incident-value">{{ incident.networkElement.model }}</span></p>
+          <p class="highlight">NetworkElement Manufacturer: <span class="incident-value">{{ incident.networkElement.manufacturer }}</span></p>
+          <p class="highlight">Components: <span class="incident-value">{{ incident.component.componentName }}</span></p>
+          <p class="highlight">Priority: <span class="incident-value">{{ incident.priority }}</span></p>
+          <p class="highlight">Severity: <span class="incident-value">{{ incident.severity }}</span></p>
+        
+        </div>
+       
+      <div>
+        <label class="label-heading" for="resolution">Resolution:</label>
+        <input type="text" id="resolution" [(ngModel)]="incident.resolution" />
+      </div>
+      <button (click)="submitResolution(incident)">Submit Resolution</button>
+      <div>
+        <label for="targetGroup">Forward to Group:</label>
+        <select id="targetGroup" [(ngModel)]="selectedGroup">
+          <option *ngFor="let group of availableGroups" [value]="group">
+            {{ group }}
+          </option>
+        </select>
+      </div>
+      <div>
+        <label for="forwardingMessage">Forwarding Message:</label>
+        <input type="text" id="forwardingMessage" [(ngModel)]="forwardingMessage" />
+      </div>
+      <button (click)="forwardIncident(incident)">Forward Incident</button>
+ 
+</li>
+</ul> 
+
+<style>
+  .action-button {
+    display: inline-block;
+    margin-right: 10px;
+
+  }
+
+  .side-heading {
+    color: #0400ffea;
+
+  }
+
+  .attribute {
+    color: brown;
+
+  }
+
+  .label-heading {
+    color: red;
+
+  }
+</style>

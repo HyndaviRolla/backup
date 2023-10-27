@@ -1,0 +1,31 @@
+ /* Add this CSS in your style file or in a <style> tag in your HTML file */
+
+/* Gradient color for buttons */
+button {
+    background: linear-gradient(to right,purple,purple); /* Adjust the color codes as needed */
+    color: #fff; /* Text color */
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .new-color { color: red; }
+  .resolved-color { color: rgb(255, 0, 191); }
+  .forwarded-color { color: blue; }
+  .closed-color { color: green; }
+  
+
+  /* Red color for high priority and high severity incidents */
+  ul.showHighPriorityList li {
+    border: 1px solid #ff4d4d; /* Red border */
+    background-color: #ffe6e6; /* Light red background */
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Highlighted button */
+  button.highlighted {
+    background: linear-gradient(to right, #ff6347, #ff4500); /* Gradient with red tones */
+  }
+  

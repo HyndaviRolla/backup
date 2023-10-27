@@ -1,0 +1,60 @@
+ /* Apply a subtle gradient background to the login container */
+.login-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to bottom right, #c8e6c9, #a5d6a7); /* Gradient background with shades of green */
+}
+
+/* Style the heading */
+.login-container h2 {
+  text-align: center;
+  color: #333;
+}
+
+/* Style the error message */
+.error {
+  color: #ff0000; /* Red color for error messages */
+  margin-bottom: 15px;
+}
+
+/* Style the form group */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Style labels */
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #4caf50; /* Dark green color for labels */
+}
+
+/* Style input fields */
+input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  background-color: #f1f8e9; /* Light green background for input fields */
+  border: 1px solid #dcedc8; /* Light green border */
+}
+
+/* Style the submit button */
+button {
+  background-color: #4caf50; /* Dark green color for the button */
+  color: #fff; /* White text */
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Change button color on hover */
+button:hover {
+  background-color: #45a049;
+}

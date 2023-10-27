@@ -1,0 +1,50 @@
+
+<h2>Network Elements</h2>
+
+<div *ngFor="let element of networkElements">
+  <div>
+    <h3>Network Element</h3>
+    <strong>Name:</strong>
+    {{ element.name }}<br>
+    
+    <strong>Type:</strong>
+    {{ element.type }}<br>
+    
+
+    <strong>IP Address:</strong>
+    {{ element.ipAddress }}<br>
+    
+    
+    <strong>Model:</strong>
+    {{ element.model }}<br>
+    
+    <strong>Manufacturer:</strong>{{ element.manufacturer }}
+    <h4>Components</h4>
+    <ul>
+      <li *ngFor="let component of element.components">{{ component.componentName }}</li>
+    </ul>
+  </div>
+  <form (submit)="addComponent(element.id)">
+    <label for="componentName">Component Name:</label>
+    <input type="text" id="componentName" [(ngModel)]="newComponent.componentName"  [ngModelOptions]="{standalone: true}" required />
+    <button type="submit">Add Component</button>
+  </form>
+</div>
+
+<hr />
+
+
+<form (submit)="addNetworkElement()">
+  <h3>Add Network Element</h3>
+  <label for="name">Name:</label>
+  <input type="text" id="name"  [(ngModel)]="newNetworkElement.name"  [ngModelOptions]="{standalone: true}" required />
+  <label for="name">Type:</label>
+   <input type="text" id="type"  [(ngModel)]="newNetworkElement.type"  [ngModelOptions]="{standalone: true}" required />
+   <label for="name">IpAddress:</label>
+    <input type="text" id="ipAddress"  [(ngModel)]="newNetworkElement.ipAddress"  [ngModelOptions]="{standalone: true}" required />
+    <label for="name">Model:</label>
+    <input type="text" id="model"  [(ngModel)]="newNetworkElement.model"  [ngModelOptions]="{standalone: true}" required />
+    <label for="name">Manufacturer:</label>
+    <input type="text" id="manufacturer"  [(ngModel)]="newNetworkElement.manufacturer"  [ngModelOptions]="{standalone: true}" required />
+  <button type="submit">Add Network Element</button>
+</form>  

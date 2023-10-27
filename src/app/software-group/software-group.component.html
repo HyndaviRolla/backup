@@ -1,0 +1,45 @@
+<!-- <p>software-group works!</p>
+<div>
+    <h2>Incidents for software Group</h2>
+    <button (click)="fetchForwardedIncidents('SoftwareGroup')">Show Forwarded Incidents</button>
+    <ul>
+      <li *ngFor="let incident of incidents">
+        {{ incident.description }} - {{ incident.issueType }}
+       
+      </li>
+    </ul>
+  </div>
+   -->
+
+  <!-- hardware-group.component.html -->
+<!-- 
+
+<div>
+    <h2>Incidents for Software Group</h2>
+    <button (click)="showForwardedIncidents ? fetchIncidents('SoftwareGroup') : fetchForwardedIncidents('SoftwareGroup')">
+      {{ showForwardedIncidents ? 'Show Assigned Incidents' : 'Show Forwarded Incidents' }}
+    </button>
+    <ul>
+      <li *ngFor="let incident of incidents">
+        {{ incident.description }} - {{ incident.issueType }}
+        <div *ngIf="showForwardedIncidents">
+          Forwarded to: {{ incident.assignmentGroup }}
+          Forwarding Message: {{ incident.forwardingMessage }}
+        </div>
+        <div *ngIf="!showForwardedIncidents">
+          <label for="targetGroup">Forward to Group:</label>
+          <select id="targetGroup" [(ngModel)]="selectedGroup">
+            <option *ngFor="let group of availableGroups" [value]="group">
+              {{ group }}
+            </option>
+          </select>
+        </div>
+        <div *ngIf="!showForwardedIncidents">
+          <label for="forwardingMessage">Forwarding Message:</label>
+          <input type="text" id="forwardingMessage" [(ngModel)]="forwardingMessage" />
+        </div>
+        <button (click)="forwardIncident(incident)">Forward Incident</button>
+      </li>
+    </ul>
+  </div>
+   -->
